@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-enum Affordability { Affordable, Pricey, Luxurious }
+enum Affordability { affordable, pricey, luxurious }
 
-enum Complexity { Simple, Challenging, Hard }
+enum Complexity { simple, challenging, hard }
 
 class Meal {
   final String title;

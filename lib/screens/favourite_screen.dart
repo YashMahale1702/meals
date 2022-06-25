@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 class Favourite extends StatelessWidget {
   @override
@@ -9,10 +8,10 @@ class Favourite extends StatelessWidget {
         title: Center(
             child: Text(
           'Favourites',
-          style: Theme.of(context).textTheme.title,
+          style: Theme.of(context).textTheme.bodyText1,
         )),
       ),
-      body: Center(
+      body: const Center(
         child: Text('fav section '),
       ),
     );

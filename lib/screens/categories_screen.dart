@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../dummy_data.dart';
 import '../widgets/category_item.dart';
 
 class Categories extends StatelessWidget {
+  const Categories({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,20 +25,20 @@ class Categories extends StatelessWidget {
           ),
           Expanded(
             child: GridView(
-              children: DUMMY_CATEGORIES
+              padding: const EdgeInsets.all(25),
+              gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                maxCrossAxisExtent: 200,
+                childAspectRatio: 3 / 2,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
+              ),
+              children: dummyCategories
                   .map((cur) => CategoryItem(
                         color: cur.color,
                         title: cur.title,
                         id: cur.id,
                       ))
                   .toList(),
-              padding: EdgeInsets.all(25),
-              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 200,
-                childAspectRatio: 3 / 2,
-                crossAxisSpacing: 20,
-                mainAxisSpacing: 20,
-              ),
             ),
           ),
         ],

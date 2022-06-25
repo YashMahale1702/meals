@@ -1,38 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import './screens/categories_screen.dart';
 import './screens/category_meals_screen.dart';
 import './screens/meal_detail_screen.dart';
 //import 'screens/tabs_screen-top.dart';
-import './screens/tabs_screen-bottom.dart';
 
 import './helpers/custom_route.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Mealsify',
       theme: ThemeData(
-        primaryColor: Color(0xff5c2a9d),
-        primaryColorDark: Color(0xff45046a),
-        accentColor: Color(0xffb5076b),
+        primaryColor: const Color(0xff5c2a9d),
+        primaryColorDark: const Color(0xff45046a),
+        accentColor: const Color(0xffb5076b),
         canvasColor: Colors.white,
         // fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
-              title: GoogleFonts.quicksand(
+              bodyText1: GoogleFonts.quicksand(
                 fontSize: 22,
                 fontWeight: FontWeight.normal,
                 color: Colors.orange,
               ),
-              body1: GoogleFonts.quicksand(
+              bodyText2: GoogleFonts.quicksand(
                 fontSize: 18,
-                color: Color(0xff050505),
+                color: const Color(0xff050505),
               ),
             ),
         pageTransitionsTheme: PageTransitionsTheme(
@@ -44,12 +44,12 @@ class MyApp extends StatelessWidget {
       ),
       // home: Categories(),
       routes: {
-        '/': (_) => Categories(),
-        CategoryMeals.routeName: (_) => CategoryMeals(),
-        MealDetail.routeName: (_) => MealDetail(),
+        '/': (_) => const Categories(),
+        CategoryMeals.routeName: (_) => const CategoryMeals(),
+        MealDetail.routeName: (_) => const MealDetail(),
       },
       onUnknownRoute: (settings) {
-        return MaterialPageRoute(builder: (_) => MealDetail());
+        return MaterialPageRoute(builder: (_) => const MealDetail());
       },
     );
   }

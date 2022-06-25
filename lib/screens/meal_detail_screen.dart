@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 import '../dummy_data.dart';
 
 class MealDetail extends StatelessWidget {
   static const String routeName = '/meal-detail';
+
+  const MealDetail({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,20 +13,20 @@ class MealDetail extends StatelessWidget {
     final routeArgs =
         ModalRoute.of(context).settings.arguments as Map<dynamic, dynamic>;
     final mealId = routeArgs['id'];
-    final selectedMeal = DUMMY_MEALS.firstWhere((cur) => cur.id == mealId);
+    final selectedMeal = dummyMeals.firstWhere((cur) => cur.id == mealId);
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          '${selectedMeal.title}',
-          style: Theme.of(context).textTheme.title,
+          selectedMeal.title,
+          style: Theme.of(context).textTheme.bodyText1,
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Hero(
                 tag: selectedMeal.imageUrl,
                 child: ClipRRect(
@@ -51,7 +52,7 @@ class MealDetail extends StatelessWidget {
             Center(
               child: Text(
                 'Ingredients',
-                style: Theme.of(context).textTheme.title,
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
             Container(
@@ -65,10 +66,10 @@ class MealDetail extends StatelessWidget {
                 itemCount: selectedMeal.ingredients.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    padding: EdgeInsets.all(5),
+                    padding: const EdgeInsets.all(5),
                     child: Text(
                       selectedMeal.ingredients[index],
-                      style: TextStyle(color: Colors.white),
+                      style: const TextStyle(color: Colors.white),
                     ),
                   );
                 },
@@ -86,7 +87,7 @@ class MealDetail extends StatelessWidget {
             Center(
               child: Text(
                 'Steps :',
-                style: Theme.of(context).textTheme.title,
+                style: Theme.of(context).textTheme.bodyText1,
               ),
             ),
             Container(
@@ -109,15 +110,15 @@ class MealDetail extends StatelessWidget {
                       ),
                       title: Text(
                         selectedMeal.steps[index],
-                        style: TextStyle(color: Colors.white),
+                        style: const TextStyle(color: Colors.white),
                       ),
                     ),
                   );
                 },
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
+            const Padding(
+              padding: EdgeInsets.only(
                 left: 40,
                 right: 40,
               ),

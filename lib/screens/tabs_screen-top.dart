@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'categories_screen.dart';
@@ -17,8 +16,8 @@ class _TabsScreenTopState extends State<TabsScreenTop> {
       initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Meal App'),
-          bottom: TabBar(
+          title: const Text('Meal App'),
+          bottom: const TabBar(
             tabs: <Widget>[
               Tab(
                 icon: Icon(Icons.category),
@@ -33,7 +32,7 @@ class _TabsScreenTopState extends State<TabsScreenTop> {
         ),
         body: TabBarView(
           children: <Widget>[
-            Categories(),
+            const Categories(),
             Favourite(),
           ],
         ),

@@ -11,24 +11,25 @@ class MealItem extends StatelessWidget {
   final Complexity complexity;
   final Affordability affordability;
 
-  MealItem({
+  const MealItem({
     @required this.id,
     @required this.title,
     @required this.imageUrl,
     @required this.duration,
     @required this.affordability,
     @required this.complexity,
+    Key key,
   });
 
   String get complexityString {
     switch (complexity) {
-      case Complexity.Simple:
+      case Complexity.simple:
         return 'Simple';
         break;
-      case Complexity.Challenging:
+      case Complexity.challenging:
         return 'Challenging';
         break;
-      case Complexity.Hard:
+      case Complexity.hard:
         return 'Hard';
         break;
       default:
@@ -38,13 +39,13 @@ class MealItem extends StatelessWidget {
 
   String get affordabilityString {
     switch (affordability) {
-      case Affordability.Affordable:
+      case Affordability.affordable:
         return 'Affordable';
         break;
-      case Affordability.Pricey:
+      case Affordability.pricey:
         return 'pricey';
         break;
-      case Affordability.Luxurious:
+      case Affordability.luxurious:
         return 'Luxurious';
         break;
       default:
@@ -71,7 +72,7 @@ class MealItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15),
         ),
-        margin: EdgeInsets.all(25),
+        margin: const EdgeInsets.all(25),
         elevation: 10,
         child: Column(
           children: <Widget>[
@@ -91,7 +92,7 @@ class MealItem extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: Text(
                 title,
                 style: TextStyle(
@@ -120,28 +121,28 @@ class MealItem extends StatelessWidget {
                         color: Theme.of(context).primaryColorDark,
                         size: 20,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 2,
                       ),
                       Text(
                         '$duration Min',
-                        style: TextStyle(fontSize: 15),
+                        style: const TextStyle(fontSize: 15),
                       )
                     ],
                   ),
                   Row(
                     children: <Widget>[
-                      Icon(
+                      const Icon(
                         Icons.work,
                         color: Colors.green,
                         size: 20,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 2,
                       ),
                       Text(
                         complexityString,
-                        style: TextStyle(fontSize: 15),
+                        style: const TextStyle(fontSize: 15),
                       )
                     ],
                   ),
@@ -152,12 +153,12 @@ class MealItem extends StatelessWidget {
                         color: Theme.of(context).accentColor,
                         size: 20,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 2,
                       ),
                       Text(
                         affordabilityString,
-                        style: TextStyle(fontSize: 15),
+                        style: const TextStyle(fontSize: 15),
                       )
                     ],
                   )
