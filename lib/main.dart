@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
               bodyText1: GoogleFonts.quicksand(
                 fontSize: 22,
                 fontWeight: FontWeight.normal,
-                color: Colors.orange,
               ),
               bodyText2: GoogleFonts.quicksand(
                 fontSize: 18,

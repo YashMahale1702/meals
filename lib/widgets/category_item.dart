@@ -57,12 +57,10 @@ class CategoryItem extends StatelessWidget {
             Positioned(
               top: 10,
               left: 15,
-              child: Container(
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
+              child: Text(
+                title,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),

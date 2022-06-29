@@ -4,11 +4,13 @@ import 'categories_screen.dart';
 import 'favourite_screen.dart';
 
 class TabsScreenTop extends StatefulWidget {
+  const TabsScreenTop({Key key}) : super(key: key);
+
   @override
-  _TabsScreenTopState createState() => _TabsScreenTopState();
+  TabsScreenTopState createState() => TabsScreenTopState();
 }
 
-class _TabsScreenTopState extends State<TabsScreenTop> {
+class TabsScreenTopState extends State<TabsScreenTop> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -30,9 +32,9 @@ class _TabsScreenTopState extends State<TabsScreenTop> {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: <Widget>[
-            const Categories(),
+            Categories(),
             Favourite(),
           ],
         ),

@@ -12,14 +12,14 @@ class MealItem extends StatelessWidget {
   final Affordability affordability;
 
   const MealItem({
+    Key key,
     @required this.id,
     @required this.title,
     @required this.imageUrl,
     @required this.duration,
     @required this.affordability,
     @required this.complexity,
-    Key key,
-  });
+  }) : super(key: key);
 
   String get complexityString {
     switch (complexity) {

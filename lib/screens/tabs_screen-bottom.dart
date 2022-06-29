@@ -4,10 +4,10 @@ class TabsScreenBottom extends StatefulWidget {
   const TabsScreenBottom({Key key}) : super(key: key);
 
   @override
-  _TabsScreenBottomState createState() => _TabsScreenBottomState();
+  TabsScreenBottomState createState() => TabsScreenBottomState();
 }
 
-class _TabsScreenBottomState extends State<TabsScreenBottom> {
+class TabsScreenBottomState extends State<TabsScreenBottom> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
