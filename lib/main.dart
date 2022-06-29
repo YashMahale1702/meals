@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: const Color(0xff5c2a9d),
         primaryColorDark: const Color(0xff45046a),
-        accentColor: const Color(0xffb5076b),
         canvasColor: Colors.white,
         // fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
@@ -40,6 +39,8 @@ class MyApp extends StatelessWidget {
             TargetPlatform.iOS: CustomPageTransitionBuilder(),
           },
         ),
+        colorScheme: ColorScheme.fromSwatch()
+            .copyWith(secondary: const Color(0xffb5076b)),
       ),
       // home: Categories(),
       routes: {

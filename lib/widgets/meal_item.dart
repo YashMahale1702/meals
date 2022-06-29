@@ -98,7 +98,7 @@ class MealItem extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.normal,
-                  color: Theme.of(context).accentColor,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
                 softWrap: true,
                 overflow: TextOverflow.fade,
@@ -150,7 +150,7 @@ class MealItem extends StatelessWidget {
                     children: <Widget>[
                       Icon(
                         Icons.attach_money,
-                        color: Theme.of(context).accentColor,
+                        color: Theme.of(context).colorScheme.secondary,
                         size: 20,
                       ),
                       const SizedBox(
